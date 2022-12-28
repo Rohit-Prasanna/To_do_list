@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://kit.fontawesome.com/82c05b49d6.js" crossorigin="anonymous"></script>
+        
+        <title>To DO</title>
+    </head>
+<body>
+
+<h1>TO-DO-LIST</h1>
+<input type="text" id="topic" placeholder="Title..."/>
+<input type="date" id="date"/>
+<input type="time" id="time"/>
+<br/>
+<button type="button" id="add-btn">ADD</button>
+<ul id="list">
+    
+    
+
+  </ul>
+  <span>Remaining task=1</span>
+  <button id ="clearall-btn" onclick="clearAll()"> Clear all </button>
+
+
+  <script>
+    const toggleDropdown = function(){
+        const dropdown = document.getElementById("dropdown-ct");
+        dropdown.hidden = !dropdown.hidden;
+    };
+    const deleteItem = function(){
+        const item = document.getElementById("item-ct");
+        item.innerHTML = "";
+    };
+
+    const onAddbtnclicked=function(){
+        const titletxt=document.getElementById("topic");
+        const datetxt=document.getElementById("date");
+        const timetxt=document.getElementById("time");
+        
+         const rawhtml=`
+    <div id="item-ct">
+            <div id="topic-ct">
+            <span>${titletxt.value}</span>
+            <button type="button" onclick ="toggleDropdown()">⌄</button>
+            </div>
+        <div id="dropdown-ct" hidden>
+            <span>${datetxt.value}</span>
+            <span>${timetxt.value}</span>
+            <i class="fa-solid fa-check-circle"></i>
+            <i class="fa-solid fa-trash" onclick = "deleteItem()"></i>
+
+        </div>  
+        </div>
+    `;
+    var ul = document.getElementById("list");
+    var li = document.createElement("li");
+    li.innerHTML = rawhtml;
+    ul.appendChild(li);
+
+
+     
+
+    };
+    const clearAll = function(){
+        const list = document.getElementById("list");
+        list.innerHTML = "";
+    };
+    const addButton=document.getElementById("add-btn");
+    addButton.addEventListener("click", onAddbtnclicked)
+    </script>
+</body>
+</html>
