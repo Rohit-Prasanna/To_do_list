@@ -5,29 +5,27 @@
         <script src="https://kit.fontawesome.com/82c05b49d6.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="style.css">
         <link href='https://fonts.googleapis.com/css?family=Gugi' rel='stylesheet'>
-<style>
 
-    body{font-family: 'Gugi';font-size: 22px;
-    };
-</style>
         <title>To DO</title>
     </head>
 <body>
     
-    
+  <div class="tit">
 <h1 >TO-DO-LIST</h1>
-<input type="text" id="topic" placeholder="Title..."/>
-<input type="date" id="date"/>
+<input class="tpk" type="text" id="topic" placeholder="Topic..."/>
+<input type="date" class="dt" id="date"/>
 <input type="time" id="time"/>
 <br/>
-<button type="button" id="add-btn">ADD</button>
-<ul id="list">
+<span type="button" class="addbtn" id="add-btn">ADD</span>
+  </div>
+
+<ul class="lst" id="list">
     
     
 
   </ul>
   <span>Remaining task=1</span>
-  <button id ="clearall-btn" onclick="clearAll()"> Clear all </button>
+  <button id ="clearall-btn" class="clrall" onclick="clearAll()"> Clear all </button>
 
 
   <script>
